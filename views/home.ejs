@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title></title>
+        <script src="https://kit.fontawesome.com/b310863504.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div class="main">
+        <div class="heading">
+            <h1>
+                <i class="fas fa-sticky-note"></i>
+                My ToDo List
+            </h1>
+        </div>
+
+        <form action="/create-task" method="POST" class="form-css">
+        <div class="form-content">
+            <div class="fields">
+                <label>What's the task?</label>
+                <input type = "text" name = "task"  class="input" required>
+            </div>
+            <div class="fields">
+                <div class="main-divided">
+                <div class="categories">
+                    <label for="categories">Category:</label>
+                    <select name="categories" id="categories" class="input-divided">
+                    <option value="Home">Home</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Friends">Friends</option>
+                    </select>
+                </div>
+                <div class="categories" style="padding-left: 20px;">
+                    <label >Date:</label>
+                    <input type = "date" name = "date" placeholder = "Due date" class="input-divided" required>
+                </div>
+                </div>
+            </div>
+            <div class="fields" style="align-items: center;">
+                <button type="submit" class="button"> <i class="fas fa-plus"></i> Add Task</button>
+                <!-- <button type="submit"> Delete Task</button> -->
+            </div>
+        </div>
+        </form>
+        <hr style="text-align:left;margin-left:0">
+        <h2>Pending Tasks!!!</h2>
+
+        <div class="created-task">
+            
+            <ol>
+                <% for(let i of ToDo_List){ %>
+                    <div class="created-task">
+                    <li>
+                        <div>
+                            <h3><%= i.task %></h3>
+                        </div>
+                        <div class="details">
+                            <div class="date">
+                                <p><i class="far fa-calendar-alt" style="margin-right: 5px;"></i><%= i.date %></p>
+                            </div>
+                            <div>
+                                <button class="categories-button"><%= i.categories %></button>
+                            </div>
+                        </div>
+                        <button class = "delete-button">
+                            <!-- <div class = "delete-button"> -->
+                                <a href="/delete-task/?id=<%= i._id %>">
+                                    <i class="fas fa-trash"></i>
+                                    Delete Task
+                                </a>
+                            <!-- </div> -->
+                        </button>
+                    </li>
+                    <hr style="width:90%;text-align:left;margin-left:10px; color: slategrey;" >
+                    
+                <% } %>
+            <ol>
+        </div>
+    </div>
+
+    </body>
+</html>
