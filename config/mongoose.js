@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // connect to datatbase
-mongoose.connect('mongodb+srv://Prateeksha:prateeksha0209@cluster0.cpeh6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+mongoose.connect(`mongodb+srv://${process.env.username}:${process.env.password}@cluster0.cpeh6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
 
 
 // acquire connection(check is successfull)
