@@ -1,12 +1,12 @@
-# note-stickered
+# Important Links
+
+Hosting Link: https://stickerednote.herokuapp.com/
+
+# About note-stickered
 
 - Note App to help you maintian a recored of all your tasks.
 - Using this App you can also label your tasks as "Home", "Work", "Personal" and "Friends".
 - Set up a due date so that you do not miss out on any deadlines.
-
-# Important Link
-
-Hosting Link: https://stickerednote.herokuapp.com/
 
 # Important Screenshots
 
